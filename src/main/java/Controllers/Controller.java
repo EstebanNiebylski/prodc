@@ -16,9 +16,6 @@ import spark.ModelAndView;
 public class Controller {
 
 	static Map map = new HashMap();
-	static Map<String, List<Team>> teamsMap = new HashMap<>();
-	static Map<String,List<User>> resultsMap = new HashMap<>();
-	static Map<String,List<Game>> gamesMap = new HashMap<>();
 
 	public Controller(final PredictionDao predictionDao, final GameDao gameDao, final UserDao userDao) {
 
@@ -69,9 +66,10 @@ public class Controller {
 
 		//Obtiene todos los equipos y los muestra
 		get("/teams", (req, res) -> {
+			Map<String, List<Team>> map = new HashMap<>();
 			List<Team> lt = gameDao.listTeams();
-			teamsMap.put("games",lt);
-			teamsMap.put("nombre",req.session().attribute("USER"));
+			map.put("games",lt);
+			map.put("nombre",req.session().attribute("USER"));
 			String type = req.session().attribute("TYPE");
 			if(type.equalsIgnoreCase("1")){
 				map.put("admin",req.session().attribute("TYPE"));
@@ -81,17 +79,19 @@ public class Controller {
 
 		//Devuelve tabla de puntos renderiza en results
 		get("/results", (req, res) -> {
+			Map<String,List<User>> map = new HashMap<>();
 			List<User> lu = gameDao.listPoints();
-			resultsMap.put("users",lu);
-			resultsMap.put("nombre",req.session().attribute("USER"));
+			map.put("users",lu);
+			map.put("nombre",req.session().attribute("USER"));
 			return new ModelAndView(map, "./Dashboard/results.mustache");
 		}, new MustacheTemplateEngine());
 
 		//Devuelve tabla de juegos creados por el administrador
 		get("/results/games", (req, res) -> {
+			Map<String,List<Game>> map = new HashMap<>();
 			List<Game> lg = gameDao.listGames();
-			gamesMap.put("games",lg);
-			gamesMap.put("nombre",req.session().attribute("USER"));
+			map.put("games",lg);
+			map.put("nombre",req.session().attribute("USER"));
 			return new ModelAndView(map, "./Dashboard/games.mustache");
 		}, new MustacheTemplateEngine());
 
