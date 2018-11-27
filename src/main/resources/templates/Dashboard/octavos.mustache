@@ -1,4 +1,4 @@
-<!-- es bueno renderizar los inputs? o nell--->
+<!-- es bueno renderizar los inputs? o nell-->
 {{> header }}
   <div class="container">
     <form class="" action="/prediction/new" method="post">
@@ -12,9 +12,9 @@
               <span class="input-group-addon" id="sizing-addon3">1° Grupo A</span>
               
                <select name="partidos[]" class="form-control" id="hidden" >
-               {{#teams}}
+               {{#teamsA}}
 					<option value="{{name}}">{{name}}</option>
-				{{/teams}}
+				{{/teamsA}}
 				</select> 
               
               
@@ -25,9 +25,9 @@
               <span class="input-group-addon" id="sizing-addon3">2° Grupo B</span>
               
                <select name="partidos[]" class="form-control" id="hidden" >
-               {{#teams}}
+               {{#teamsB}}
 					<option value="{{name}}">{{name}}</option>
-				{{/teams}}
+				{{/teamsB}}
 				</select> 
               
               
@@ -40,9 +40,9 @@
               <span class="input-group-addon" id="sizing-addon3">1° Grupo C</span>
               
                <select name="partidos[]" class="form-control" id="hidden" >
-               {{#teams}}
+               {{#teamsC}}
 					<option value="{{name}}">{{name}}</option>
-				{{/teams}}
+				{{/teamsC}}
 				</select> 
               
               
@@ -53,9 +53,9 @@
               <span class="input-group-addon" id="sizing-addon3">2° Grupo D</span>
               
                <select name="partidos[]" class="form-control" id="hidden" >
-               {{#teams}}
+               {{#teamsD}}
 					<option value="{{name}}">{{name}}</option>
-				{{/teams}}
+				{{/teamsD}}
 				</select> 
               
               
@@ -68,9 +68,9 @@
               <span class="input-group-addon" id="sizing-addon3">1° Grupo E</span>
               
                <select name="partidos[]" class="form-control" id="hidden" >
-               {{#teams}}
+               {{#teamsE}}
 					<option value="{{name}}">{{name}}</option>
-				{{/teams}}
+				{{/teamsE}}
 				</select> 
               
               
@@ -80,9 +80,9 @@
             <span class="input-group-addon" id="sizing-addon3">2° Grupo F</span>
             
             <select name="partidos[]" class="form-control" id="hidden" >
-               {{#teams}}
+               {{#teamsF}}
 					<option value="{{name}}">{{name}}</option>
-				{{/teams}}
+				{{/teamsF}}
 				</select> 
               
             
@@ -97,9 +97,9 @@
           <div class="input-group input-group-sm">
               <span class="input-group-addon" id="sizing-addon3">1° Grupo B</span>
               <select name="partidos[]" class="form-control" id="hidden" >
-               {{#teams}}
+               {{#teamsB}}
 					<option value="{{name}}">{{name}}</option>
-				{{/teams}}
+				{{/teamsB}}
 				</select> 
               
               
@@ -109,9 +109,9 @@
           <div class="input-group input-group-sm">
             <span class="input-group-addon" id="sizing-addon3">2° Grupo A</span>
             <select name="partidos[]" class="form-control" id="hidden" >
-               {{#teams}}
+               {{#teamsA}}
 					<option value="{{name}}">{{name}}</option>
-				{{/teams}}
+				{{/teamsA}}
 				</select> 
               
             
@@ -123,9 +123,9 @@
               <span class="input-group-addon" id="sizing-addon3">1° Grupo D</span>
               
               <select name="partidos[]" class="form-control" id="hidden" >
-               {{#teams}}
+               {{#teamsD}}
 					<option value="{{name}}">{{name}}</option>
-				{{/teams}}
+				{{/teamsD}}
 				</select> 
               
           
@@ -133,9 +133,9 @@
           <div class="input-group input-group-sm">
             <span class="input-group-addon" id="sizing-addon3">2° Grupo C</span>
             <select name="partidos[]" class="form-control" id="hidden" >
-               {{#teams}}
+               {{#teamsC}}
 					<option value="{{name}}">{{name}}</option>
-				{{/teams}}
+				{{/teamsC}}
 				</select> 
               
             
@@ -148,9 +148,9 @@
           <div class="input-group input-group-sm">
               <span class="input-group-addon" id="sizing-addon3">1° Grupo F</span>
               <select name="partidos[]" class="form-control" id="hidden" >
-               {{#teams}}
+               {{#teamsF}}
 					<option value="{{name}}">{{name}}</option>
-				{{/teams}}
+				{{/teamsF}}
 				</select> 
               
               
@@ -161,9 +161,9 @@
             <span class="input-group-addon" id="sizing-addon3">2° Grupo E</span>
             
             <select name="partidos[]" class="form-control" id="hidden" >
-               {{#teams}}
+               {{#teamsE}}
 					<option value="{{name}}">{{name}}</option>
-				{{/teams}}
+				{{/teamsE}}
 				</select> 
               
           
@@ -175,9 +175,9 @@
               <span class="input-group-addon" id="sizing-addon3">1° Grupo H</span>
               
               <select name="partidos[]" class="form-control" id="hidden" >
-               {{#teams}}
+               {{#teamsH}}
 					<option value="{{name}}">{{name}}</option>
-				{{/teams}}
+				{{/teamsH}}
 				</select> 
               
             
@@ -185,9 +185,9 @@
           <div class="input-group input-group-sm">
             <span class="input-group-addon" id="sizing-addon3">2° Grupo G</span>
             <select name="partidos[]" class="form-control" id="hidden" >
-               {{#teams}}
+               {{#teamsG}}
 					<option value="{{name}}">{{name}}</option>
-				{{/teams}}
+				{{/teamsG}}
 				</select> 
               
             
@@ -196,23 +196,23 @@
         <div class="col-md-4 col-sm-6 grupos">
           <span class="label label-default">Juego 8</span>
           <div class="input-group input-group-sm">
-              <span class="input-group-addon" id="sizing-addon3">1° Grupo A</span>
+              <span class="input-group-addon" id="sizing-addon3">1° Grupo G</span>
               
               <select name="partidos[]" class="form-control" id="hidden" >
-               {{#teams}}
+               {{#teamsG}}
 					<option value="{{name}}">{{name}}</option>
-				{{/teams}}
+				{{/teamsG}}
 				</select> 
               
               
           </div>
           <div class="input-group input-group-sm">
-            <span class="input-group-addon" id="sizing-addon3">1° Grupo A</span>
+            <span class="input-group-addon" id="sizing-addon3">1° Grupo H</span>
             
             <select name="partidos[]" class="form-control" id="hidden" >
-               {{#teams}}
+               {{#teamsH}}
 					<option value="{{name}}">{{name}}</option>
-				{{/teams}}
+				{{/teamsH}}
 				</select> 
               
           

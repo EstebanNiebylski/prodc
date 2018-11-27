@@ -4,3 +4,5 @@ CREATE TABLE teams (
   created_at DATETIME,
   updated_at DATETIME
 )ENGINE=InnoDB;
+
+ALTER TABLE teams ADD group_letter VARCHAR(1);

@@ -61,3 +61,37 @@ INSERT INTO teams VALUES ("Suiza", "sui.png", NOW(), NOW());
 INSERT INTO teams VALUES ("Suecia", "swe.png", NOW(), NOW());
 
 INSERT INTO teams VALUES ("Dinamarca", "den.png", NOW(), NOW());
+
+
+UPDATE teams SET group_letter = "A" WHERE name = "Rusia";
+UPDATE teams SET group_letter = "A" WHERE name = "Arabia Saudita";
+UPDATE teams SET group_letter = "A" WHERE name = "Egipto";
+UPDATE teams SET group_letter = "A" WHERE name = "Uruguay";
+UPDATE teams SET group_letter = "B" WHERE name = "Portugal";
+UPDATE teams SET group_letter = "B" WHERE name = "España";
+UPDATE teams SET group_letter = "B" WHERE name = "Marruecos";
+UPDATE teams SET group_letter = "B" WHERE name = "Iran";
+UPDATE teams SET group_letter = "C" WHERE name = "Francia";
+UPDATE teams SET group_letter = "C" WHERE name = "Australia";
+UPDATE teams SET group_letter = "C" WHERE name = "Peru";
+UPDATE teams SET group_letter = "C" WHERE name = "Dinamarca";
+UPDATE teams SET group_letter = "D" WHERE name = "Argentina";
+UPDATE teams SET group_letter = "D" WHERE name = "Islandia";
+UPDATE teams SET group_letter = "D" WHERE name = "Croacia";
+UPDATE teams SET group_letter = "D" WHERE name = "Nigeria";
+UPDATE teams SET group_letter = "E" WHERE name = "Brasil";
+UPDATE teams SET group_letter = "E" WHERE name = "Suiza";
+UPDATE teams SET group_letter = "E" WHERE name = "Costa rica";
+UPDATE teams SET group_letter = "E" WHERE name = "Serbia";
+UPDATE teams SET group_letter = "F" WHERE name = "Alemania";
+UPDATE teams SET group_letter = "F" WHERE name = "Mexico";
+UPDATE teams SET group_letter = "F" WHERE name = "Suecia";
+UPDATE teams SET group_letter = "F" WHERE name = "Corea del Sur";
+UPDATE teams SET group_letter = "G" WHERE name = "Belgica";
+UPDATE teams SET group_letter = "G" WHERE name = "Panama";
+UPDATE teams SET group_letter = "G" WHERE name = "Tunes";
+UPDATE teams SET group_letter = "G" WHERE name = "Inglaterra";
+UPDATE teams SET group_letter = "H" WHERE name = "Polonia";
+UPDATE teams SET group_letter = "H" WHERE name = "Senegal";
+UPDATE teams SET group_letter = "H" WHERE name = "Colombia";
+UPDATE teams SET group_letter = "H" WHERE name = "Japon";

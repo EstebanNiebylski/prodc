@@ -23,7 +23,24 @@ public class Controller {
 		post("/prediction", (req, res) -> {
 			Map<String, List<Team>> map = new HashMap<>();
 			List<Team> lt = gameDao.listTeams();
+			List<Team> ltA = gameDao.listTeamsByGroupLetter("A");
+			List<Team> ltB = gameDao.listTeamsByGroupLetter("B");
+			List<Team> ltC = gameDao.listTeamsByGroupLetter("C");
+			List<Team> ltD = gameDao.listTeamsByGroupLetter("D");
+			List<Team> ltE = gameDao.listTeamsByGroupLetter("E");
+			List<Team> ltF = gameDao.listTeamsByGroupLetter("F");
+			List<Team> ltG = gameDao.listTeamsByGroupLetter("G");
+			List<Team> ltH = gameDao.listTeamsByGroupLetter("H");
+			
 			map.put("teams",lt);
+			map.put("teamsA",ltA);
+			map.put("teamsB",ltB);
+			map.put("teamsC",ltC);
+			map.put("teamsD",ltD);
+			map.put("teamsE",ltE);
+			map.put("teamsF",ltF);
+			map.put("teamsG",ltG);
+			map.put("teamsH",ltH);
 			String option = req.queryParams("option");
 			map.put("nombre",req.session().attribute("USER"));
 			switch(option){
