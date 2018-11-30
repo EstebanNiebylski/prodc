@@ -4,6 +4,13 @@
       <div class="row">
         <div class="well well-lg text-center">
           <strong>Ganador</strong>
+          {{#phase}}
+				(vence {{expires}})
+			 
+				{{#admin}}
+				 <a href="/phase/update/{{id}}" class="btn btn-success"> Editar Fecha </a>
+				{{/admin}}
+			{{/phase}} 
         </div>
         <div class="col-md-4 col-sm-4">
          <img src="images/copa.jpg" alt="copa" height="140" width="60" align="right">
