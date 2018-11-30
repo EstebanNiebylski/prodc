@@ -28,7 +28,7 @@ public class ManageController{
       		    return new ModelAndView (map, "./Dashboard/manage.mustache");
           }
           else{
-            return new ModelAndView (map, "./Dashboard/index.mustache");
+            return new ModelAndView (map, "./401.mustache");
           }
       	}, new MustacheTemplateEngine());
 
@@ -36,7 +36,11 @@ public class ManageController{
         get("/userList", (req,res)->{
           Map<String, List<User>> map = new HashMap<>();
           List<User> listaUsuarios = userDao.getAllUsers();
-          map.put("Usuarios", listaUsuarios);
+          String tipoUsuario =  req.session().attribute("TYPE");
+          if (tipoUsuario.equalsIgnoreCase("1")){
+              map.put("admin", req.session().attribute("TYPE"));
+          }
+          map.put("usuarios", listaUsuarios);
           return new ModelAndView (map, "./Dashboard/userList.mustache");
 
         }, new MustacheTemplateEngine());
