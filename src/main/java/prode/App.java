@@ -70,6 +70,7 @@ public class App
 		//Inicializa controladores
 		new Controller(new PredictionDao(), new GameDao(), new UserDao());
 		new TeamController(uploadDir);
+		new PhaseController();
 	}
 
 }
