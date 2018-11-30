@@ -68,8 +68,10 @@ public class App
 				);
 
 		//Inicializa controladores
-		new Controller(new PredictionDao(), new GameDao(), new UserDao());
-		new TeamController(uploadDir);
+		new UserController(new UserDao());
+		new PredictionController(new PredictionDao(), new GameDao());
+		new ResultController(new GameDao());
+		new TeamController(uploadDir, new GameDao());
 		new ManageController(new UserDao());
 	}
 

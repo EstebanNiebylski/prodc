@@ -1,8 +1,8 @@
 INSERT INTO teams VALUES ("Argentina", "arg.png", NOW(), NOW(), "");
 
-INSERT INTO teams VALUES ("Rusia", "rus.png", NOW(), NOW(), "");
+INSERT INTO teams VALUES ("Rusia", "rus.png",NOW(), NOW(), "");
 
-INSERT INTO teams VALUES ("Nigeria", "nig.png", NOW(), NOW(), "");
+INSERT INTO teams VALUES ("Nigeria", "nig.png"NOW(), NOW(), "");
 
 INSERT INTO teams VALUES ("Egipto", "egy.png", NOW(), NOW(), "");
 
