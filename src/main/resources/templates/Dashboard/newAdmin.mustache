@@ -1,17 +1,25 @@
 {{>header}}
   <h1>Llene los campos para crear un usuario tipo administrador</h1>
 
-  <form action="/admin/new" method="post">
-    <div class="form-group">
-      <label for="name">Nombre usuario</label>
-      <input type="name" class="form-control" id="name">
-    </div>
-    <div class="form-group">
-      <label for="pass">Password</label>
-      <input type="password" class="form-control" id="pass" placeholder="Password">
-    </div>
-    <input type="hidden" name="id" value="1">
-    <button type="submit" class="btn btn-primary">Crear</button>
+  <form id="registro" action="/admin/new" method="post">
+    <table>
+      <div>
+        <label for="nickname">Nombre usuario</label>
+        <input type="text" name="nickname" id="nickname">
+      </div>
+      <div class="registro">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+      </div>
+      <div class="registro">
+        <label for="password">Contraseña</label>
+        <input type="password" name="password" id="password">
+      </div>
+      <input type="hidden" name="id" value="1">
+      <div>
+        <button type="submit" class="btn btn-primary">Crear</button>
+      </div>
+    </table>
   </form>
 
 {{>footer}}

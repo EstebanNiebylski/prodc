@@ -54,7 +54,7 @@ public class ManageController{
           String username = req.queryParams("nickname");
     			String password = req.queryParams("password");
     			String email = req.queryParams("email");
-          User newAdmin = userDao.createUser(username, password, email);
+          User newAdmin = userDao.createAdmin(username, password, email);
           if (newAdmin==null){
             return new ModelAndView(null, "./405.mustache");
           }
