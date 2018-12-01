@@ -21,7 +21,7 @@ public class PredictionController {
 
       //Direcciona a la pagina correspondiente
       post("/prediction", (req, res) -> {
-        Map<String, List<Team>> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<>();
         List<Team> lt = gameDao.listTeams();
         List<Team> ltA = gameDao.listTeamsByGroupLetter("A");
         List<Team> ltB = gameDao.listTeamsByGroupLetter("B");
@@ -43,16 +43,31 @@ public class PredictionController {
         map.put("teamsH",ltH);
         String option = req.queryParams("option");
         map.put("nombre",req.session().attribute("USER"));
+        String type = req.session().attribute("TYPE");
+		if(type.equalsIgnoreCase("1")){
+			map.put("admin",req.session().attribute("TYPE"));
+		}
+		
         switch(option){
         case "Octavos":
+        Phase octavos = Phase.getPhaseId(0);
+        map.put("phase", octavos);
           return new ModelAndView(map, "./Dashboard/octavos.mustache");
         case "Cuartos":
+         Phase cuartos = Phase.getPhaseId(1);
+        map.put("phase", cuartos);
           return new ModelAndView(map, "./Dashboard/cuartos.mustache");
         case "Semifinales":
+         Phase semifinales = Phase.getPhaseId(2);
+        map.put("phase", semifinales);
           return new ModelAndView(map, "./Dashboard/semifinales.mustache");
         case "Finales":
+         Phase finales = Phase.getPhaseId(3);
+        map.put("phase", finales);
           return new ModelAndView(map, "./Dashboard/finales.mustache");
         case "Ganador":
+         Phase ganador = Phase.getPhaseId(4);
+        map.put("phase", ganador);
           return new ModelAndView(map, "./Dashboard/ganador.mustache");
         }
         return new ModelAndView(map, "./Dashboard/index.mustache");
