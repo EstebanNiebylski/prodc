@@ -5,14 +5,14 @@
       <div class="panel-body">
         <form action="/team/save" method="post" enctype="multipart/form-data">
         
-        <label for="nombre">Nombre del Equipo</label>
+        <label for="nombre">Nombre</label>
         <input type="text" placeholder="Equipo" name="nombre" id="nombre" required>
         <br>
         
-        <label for ="imagen">Cargar escude del Equipo</label>
+        <label for ="imagen">Escudo</label>
         <input type="file" class="form-control-file" name="imagen" id="imagen" accept=".png" required>
         
-        <input type="submit" value="Enviar">
+        <input type="submit" class="btn btn-success" value="Enviar">
         <br>
         {{mensaje}}
         

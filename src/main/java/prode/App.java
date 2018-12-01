@@ -73,6 +73,7 @@ public class App
 		new ResultController(new GameDao());
 		new TeamController(uploadDir, new GameDao());
 		new ManageController(new UserDao());
+		new PhaseController();
 	}
 
 }

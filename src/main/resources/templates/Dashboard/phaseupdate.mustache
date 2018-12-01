@@ -1,0 +1,25 @@
+{{> header}}
+  <div class="container">
+      <div class="panel panel-primary">
+      <div class="panel-heading">Cambiar fecha vencimiento de Fase</div>
+      <div class="panel-body">
+        <form action="/phase/save" method="post" >
+        {{#phase}}
+			Fase {{name}}
+			<br>
+			<label for="fecha">Vence</label>
+			<input type="text" name="fecha" id="fecha" value="{{expires}}" required>
+			<br>
+			<input type="hidden" name="id" id="id" value="{{id}}">
+			<input type="submit" class="btn btn-success" value="Enviar">
+        {{/phase}}        
+        </form>
+        {{#mensaje}}
+		<div class="alert alert-light">
+			{{mensaje}}
+		</div>
+		{{/mensaje}}
+        </div>
+       </div>
+   </div>
+{{> footer}}
