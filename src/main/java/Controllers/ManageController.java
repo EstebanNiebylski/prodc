@@ -28,7 +28,7 @@ public class ManageController{
       		    return new ModelAndView (map, "./Dashboard/manage.mustache");
           }
           else{
-            return new ModelAndView (map, "./401.mustache");
+            return new ModelAndView (null, "./401.mustache");
           }
       	}, new MustacheTemplateEngine());
 
@@ -43,6 +43,22 @@ public class ManageController{
           map.put("usuarios", listaUsuarios);
           return new ModelAndView (map, "./Dashboard/userList.mustache");
 
+        }, new MustacheTemplateEngine());
+
+        get("/newAdmin", (req,res)->{
+          return new ModelAndView (map, "./Dashboard/newAdmin.mustache");
+        }, new MustacheTemplateEngine());
+
+        //metodo para agregar usuario administrador
+        post("/admin/new", (req,res)->{
+          String username = req.queryParams("nickname");
+    			String password = req.queryParams("password");
+    			String email = req.queryParams("email");
+          User newAdmin = userDao.createAdmin(username, password, email);
+          if (newAdmin==null){
+            return new ModelAndView(null, "./405.mustache");
+          }
+           return new ModelAndView(null, "./Dashboard/manage.mustache");
         }, new MustacheTemplateEngine());
     }
 }

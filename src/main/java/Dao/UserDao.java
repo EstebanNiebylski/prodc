@@ -38,4 +38,10 @@ public class UserDao {
     return user;
   }
 
+  //Crea un usuario administrador
+  public User createAdmin(String name, String password, String email){
+    User newAdmin = new User(name, email, password, 1, 0);
+    return newAdmin;
+  }
+
 }
