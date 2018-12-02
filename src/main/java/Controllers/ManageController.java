@@ -58,7 +58,14 @@ public class ManageController{
           if (newAdmin==null){
             return new ModelAndView(null, "./405.mustache");
           }
-           return new ModelAndView(null, "./Dashboard/manage.mustache");
+          return new ModelAndView(null, "./Dashboard/manage.mustache");
+        }, new MustacheTemplateEngine());
+
+        //borra un usuario y sus datos con determinado id
+        post("/user/delete", (req,res)->{
+          String id = req.queryParams("id");
+          userDao.deleteUser(id);
+          return new ModelAndView(null, "./Dashboard/manage.mustache");
         }, new MustacheTemplateEngine());
     }
 }
