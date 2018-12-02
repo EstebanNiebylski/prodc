@@ -19,6 +19,15 @@ public class User extends Model {
       saveIt();
     }
 
+    public User(String name, String email, String password, int type, int score){
+      set("nick",name);
+      set("email",email);
+      set("password",password);
+      set("type",type);
+      set("score",score);
+      saveIt();
+    }
+
     public String getName(){ return getString("nick"); }
     public String getEmail(){ return getString("email"); }
     public String getPassword(){ return getString("password"); }

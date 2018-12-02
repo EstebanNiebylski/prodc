@@ -32,8 +32,8 @@ public class App
 	public static void main( String[] args )
 	{
 		//metrica
-		Meter requests = Metricas.getRegistry().meter("requests");
-		Metricas.startReport();
+		//Meter requests = Metricas.getRegistry().meter("requests");
+		//Metricas.startReport();
 
 		//Directorio upload donde se cargan las imagenes de los Equipos
 		File uploadDir = new File("src/main/resources/public/images");
@@ -50,7 +50,7 @@ public class App
 
 		//Abre conexion antes de cada solicitud
 		before((request, response) -> {
-			requests.mark();
+			//requests.mark();
 			Base.open("com.mysql.jdbc.Driver", "jdbc:mysql://127.0.0.1/prode_test?nullNamePatternMatchesAll=true", "root", "root");
 		});
 
@@ -68,8 +68,11 @@ public class App
 				);
 
 		//Inicializa controladores
-		new Controller(new PredictionDao(), new GameDao(), new UserDao());
-		new TeamController(uploadDir);
+		new UserController(new UserDao());
+		new PredictionController(new PredictionDao(), new GameDao());
+		new ResultController(new GameDao());
+		new TeamController(uploadDir, new GameDao());
+		new ManageController(new UserDao());
 		new PhaseController();
 	}
 

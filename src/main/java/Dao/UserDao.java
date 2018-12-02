@@ -2,6 +2,10 @@
 
 import java.util.List;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 import org.javalite.activejdbc.Base;
 import org.javalite.activejdbc.LazyList;
 import org.javalite.activejdbc.Model;
@@ -36,6 +40,18 @@ public class UserDao {
   public User isUser(String name, String password){
     User user = User.findFirst("nick = ? AND password = ?", name, password);
     return user;
+  }
+
+  //Crea un usuario administrador
+  public User createAdmin(String name, String password, String email){
+    User newAdmin = new User(name, email, password, 1, 0);
+    return newAdmin;
+  }
+
+  //borra un usuario de la tabla de usuarios
+  public void deleteUser(String id){
+    User user = User.findById(id);
+    user.delete();
   }
 
 }
